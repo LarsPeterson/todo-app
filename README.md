@@ -20,7 +20,7 @@ npm start
 npm run build:prod
 ```
 ```
-pm2 serve dist/todo-app --no-daemon
+pm2 serve dist/todo-app --spa --no-daemon 
 ```
 
 ## How to Reproduce This Project
@@ -73,10 +73,10 @@ Functional Requirements:
 
 Data Requirements
 
-- title, required, max 50 characters
-- description, optional, max 1000 characters
-- timeInMin, required, between 1 and 360
-- instructions, required 
+- title, required, max 50 characters ✓
+- description, optional, max 1000 characters ✓
+- timeInMin, required, between 1 and 360 ✓
+- instructions, required  ✓
 
 Deliverables:
 - A short description of how to build, deploy, and run your application. ✓
@@ -89,4 +89,4 @@ Extra Credit
 - Implement pub/sub pattern for todo items (using rxjs) ✓
 - Make your application server-side rendered (dev server will be enough to demonstrate its work). As a bonus pack it in Docker container ❌
 - Utilise a WYSIWYG editor for editing to-dos ❌
-- You will need to implement basic memory cache (using rxjs) for such calls with possibility to clear it in particular cases ❌
+- You will need to implement basic memory cache (using rxjs) for such calls with possibility to clear it in particular cases ✓
