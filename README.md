@@ -1,27 +1,91 @@
-# TodoApp
+# ToDo App Boilerplate
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2 and implements `@ngrx/store`
 
-## Development server
+## How to Run Locally
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+git clone <CLONE_URL>
+```
+```
+npm i
+```
+```
+npm start
+```
 
-## Code scaffolding
+## How to Test Production Locally
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+npm run build:prod
+```
+```
+pm2 serve dist/todo-app --no-daemon
+```
 
-## Build
+## How to Reproduce This Project
+command line
+```
+ng new todo-app
+ng g c pages/todo
+ng g c pages/todo-add
+ng g c pages/not-found
+ng add @ngrx/store@latest
+ng add @angular/material
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+tsconfig.json
+```
+"noImplicitAny": false
+```
 
-## Running unit tests
+## Useful Documentation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+https://ngrx.io/guide/store
 
-## Running end-to-end tests
+https://github.com/btroncone/ngrx-store-localstorage
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+https://ng-bootstrap.github.io/#/components/
 
-## Further help
+https://material.angular.io/components/categories
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Types/Interfaces
+
+```
+interface Todo {
+    id: number;
+    title: string;
+    description?: string;
+    timeInMin: number;
+    instructions: string;
+    completed: boolean;
+}
+```
+
+## Project Acceptance
+
+Functional Requirements:
+- Create the list todos page ✓
+- Create the add todo page ✓
+- Create navigation between pages ✓
+
+
+Data Requirements
+
+- title, required, max 50 characters
+- description, optional, max 1000 characters
+- timeInMin, required, between 1 and 360
+- instructions, required 
+
+Deliverables:
+- A short description of how to build, deploy, and run your application. ✓
+- Everything we need to build, deploy, and run your project, including source code, images, templates, build scripts. ✓
+- Any other resources needed to build and run your application. ✓
+
+Extra Credit
+- Check your code into Bitbucket or Git ✓
+- Host a working version in the cloud and give us the URL ✓
+- Implement pub/sub pattern for todo items (using rxjs) ✓
+- Make your application server-side rendered (dev server will be enough to demonstrate its work). As a bonus pack it in Docker container ❌
+- Utilise a WYSIWYG editor for editing to-dos ❌
+- You will need to implement basic memory cache (using rxjs) for such calls with possibility to clear it in particular cases ❌

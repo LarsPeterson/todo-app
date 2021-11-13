@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <div class="row mb-5">
+        <div class="col-12 d-flex align-items-center">
+            <h2 class="m-0" style="font-size:38px;">Add Todo</h2>
+        </div>
+    </div>
+
+    <form class="example-form" [formGroup]="todoForm">
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <mat-form-field class="w-100" appearance="fill">
+                    <mat-label>Title</mat-label>
+                    <input matInput placeholder="" value="" formControlName="title">
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-md-3">
+                <mat-form-field class="w-100" appearance="fill">
+                    <mat-label>Time (minutes)</mat-label>
+                    <input type="number" matInput placeholder="" value="" formControlName="timeInMin">
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-md-3">
+                <mat-form-field class="w-100" appearance="fill">
+                    <mat-label>Status</mat-label>
+                    <select matNativeControl formControlName="status">
+                        <option value="open">Open</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-md-6">
+                <mat-form-field class="w-100" appearance="fill">
+                    <mat-label>Short Description</mat-label>
+                    <textarea matInput placeholder="" formControlName="description"></textarea>
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-md-6">
+                <mat-form-field class="w-100" appearance="fill">
+                    <mat-label>Instructions</mat-label>
+                    <textarea matInput placeholder="" formControlName="instructions"></textarea>
+                </mat-form-field>
+            </div>
+            <div class="col-12">
+                <button (click)="submit()" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
