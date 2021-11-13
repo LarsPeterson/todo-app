@@ -32,6 +32,7 @@ ng g c pages/todo-add
 ng g c pages/not-found
 ng add @ngrx/store@latest
 ng add @angular/material
+ng add @ng-bootstrap/ng-bootstrap@next
 ```
 
 tsconfig.json
